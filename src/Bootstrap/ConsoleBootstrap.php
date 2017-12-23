@@ -35,9 +35,9 @@ final class ConsoleBootstrap implements BootstrapInterface
 
     /**
      * @param ApplicationConfig $applicationConfig
-     * @param BootstrapRegistry $bootstrapCollection
+     * @param BootstrapRegistry $bootstrapRegistry
      */
-    public function bootstrap(ApplicationConfig $applicationConfig, BootstrapRegistry $bootstrapCollection): void
+    public function bootstrap(ApplicationConfig $applicationConfig, BootstrapRegistry $bootstrapRegistry): void
     {
         $serviceManagerConfigurator = new ServiceManagerConfigurator(ConsoleServiceManagerConfig::class);
 
@@ -45,7 +45,7 @@ final class ConsoleBootstrap implements BootstrapInterface
             $applicationConfig->getBootstrapDirectory(),
         ];
 
-        foreach ($bootstrapCollection->getModules() as $module) {
+        foreach ($bootstrapRegistry->getModules() as $module) {
             $bootstrapDirectories[] = $module->getBootstrapDirectory();
         }
 
@@ -57,6 +57,6 @@ final class ConsoleBootstrap implements BootstrapInterface
                 );
             }
         }
-        $bootstrapCollection->addService(ConsoleServiceManagerConfig::class, $serviceManagerConfigurator->getServiceManagerConfig());
+        $bootstrapRegistry->addService(ConsoleServiceManagerConfig::class, $serviceManagerConfigurator->getServiceManagerConfig());
     }
 }
