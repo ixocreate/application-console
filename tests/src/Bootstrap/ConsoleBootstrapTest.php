@@ -1,6 +1,6 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
+ * kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
  *
  * @package kiwi-suite/application-console
  * @see https://github.com/kiwi-suite/application-console
@@ -15,7 +15,7 @@ use KiwiSuite\Application\ApplicationConfig;
 use KiwiSuite\Application\Bootstrap\BootstrapRegistry;
 use KiwiSuite\ApplicationConsole\Bootstrap\ConsoleBootstrap;
 use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
-use KiwiSuiteMisc\ApplicationConsole\ModuleTest;
+use KiwiSuiteMisc\ApplicationConsole\BundleTest;
 use PHPUnit\Framework\TestCase;
 
 class ConsoleBootstrapTest extends TestCase
@@ -34,7 +34,8 @@ class ConsoleBootstrapTest extends TestCase
             null,
             null,
             null,
-            [ModuleTest::class]
+            [],
+            [BundleTest::class]
         );
     }
 

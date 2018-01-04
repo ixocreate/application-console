@@ -10,8 +10,8 @@
     ],
     "require": {
         "php": "^7.1",
-        "kiwi-suite/application": "^0.2",
-        "kiwi-suite/config": "^0.1",
+        "kiwi-suite/application": "^0",
+        "kiwi-suite/config": "^0",
         "symfony/console": "^4.0"
     },
     "require-dev": {

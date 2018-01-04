@@ -1,6 +1,6 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
+ * kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
  *
  * @package kiwi-suite/application-console
  * @see https://github.com/kiwi-suite/application-console
@@ -11,10 +11,10 @@
 declare(strict_types=1);
 namespace KiwiSuiteMisc\ApplicationConsole;
 
-use KiwiSuite\Application\Module\ModuleInterface;
+use KiwiSuite\Application\Bundle\BundleInterface;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
 
-class ModuleTest implements ModuleInterface
+class BundleTest implements BundleInterface
 {
 
     /**

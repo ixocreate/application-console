@@ -1,6 +1,6 @@
 <?php
 $header = <<<'EOF'
-kiwi-suite/application (https://github.com/kiwi-suite/application-console)
+kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
 
 @package kiwi-suite/application-console
 @link https://github.com/kiwi-suite/application-console

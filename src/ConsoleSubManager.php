@@ -1,6 +1,6 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
+ * kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
  *
  * @package kiwi-suite/application-console
  * @see https://github.com/kiwi-suite/application-console

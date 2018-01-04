@@ -1,6 +1,6 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
+ * kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
  *
  * @package kiwi-suite/application-console
  * @see https://github.com/kiwi-suite/application-console
@@ -45,8 +45,8 @@ final class ConsoleBootstrap implements BootstrapInterface
             $applicationConfig->getBootstrapDirectory(),
         ];
 
-        foreach ($bootstrapRegistry->getModules() as $module) {
-            $bootstrapDirectories[] = $module->getBootstrapDirectory();
+        foreach ($applicationConfig->getBundles() as $bundle) {
+            $bootstrapDirectories[] = $bundle->getBootstrapDirectory();
         }
 
         foreach ($bootstrapDirectories as $directory) {
