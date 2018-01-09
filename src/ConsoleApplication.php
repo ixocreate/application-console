@@ -14,10 +14,9 @@ namespace KiwiSuite\ApplicationConsole;
 use KiwiSuite\Application\ApplicationConfigurator;
 use KiwiSuite\Application\ApplicationInterface;
 use KiwiSuite\Application\Bootstrap;
-use KiwiSuite\ApplicationConsole\Bootstrap\ConsoleBootstrap;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
+use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
+use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
 use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
-use KiwiSuite\Config\Bootstrap\ConfigBootstrap;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
 use Symfony\Component\Console\Application;
 
@@ -53,18 +52,20 @@ final class ConsoleApplication implements ApplicationInterface
      * @param ApplicationConfigurator $applicationConfigurator
      * @return mixed
      */
-    public function configureApplicationConfig(ApplicationConfigurator $applicationConfigurator)
+    public function configureApplicationConfig(ApplicationConfigurator $applicationConfigurator) : void
     {
-        $applicationConfigurator->addBootstrapItem(ConfigBootstrap::class, 50);
-        $applicationConfigurator->addBootstrapItem(ConsoleBootstrap::class, 100);
+        $applicationConfigurator->addConfiguratorItem(ConsoleConfiguratorItem::class);
     }
 
     /**
-     * @param ServiceManagerConfigurator $serviceManagerConfigurator
+     * @param ConfiguratorRegistry $configuratorRegistry
      */
-    public function configureServiceManager(ServiceManagerConfigurator $serviceManagerConfigurator): void
+    public function configure(ConfiguratorRegistry $configuratorRegistry): void
     {
+        /** @var ServiceManagerConfigurator $serviceManagerConfigurator */
+        $serviceManagerConfigurator = $configuratorRegistry->getConfigurator(ServiceManagerConfigurator::class);
+
+        $serviceManagerConfigurator->addFactory(Application::class);
         $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);
-        $serviceManagerConfigurator->addFactory(Application::class, ConsoleFactory::class);
     }
 }
