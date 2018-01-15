@@ -63,7 +63,7 @@ final class ConsoleApplication implements ApplicationInterface
     public function configure(ConfiguratorRegistry $configuratorRegistry): void
     {
         /** @var ServiceManagerConfigurator $serviceManagerConfigurator */
-        $serviceManagerConfigurator = $configuratorRegistry->getConfigurator(ServiceManagerConfigurator::class);
+        $serviceManagerConfigurator = $configuratorRegistry->getConfigurator('serviceManagerConfigurator');
 
         $serviceManagerConfigurator->addFactory(Application::class);
         $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);
