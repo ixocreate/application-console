@@ -17,6 +17,7 @@ use KiwiSuite\Application\Bootstrap;
 use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
 use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
 use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
+use KiwiSuite\Database\Bootstrap\DatabaseBootstrap;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
 use Symfony\Component\Console\Application;
 
@@ -55,6 +56,8 @@ final class ConsoleApplication implements ApplicationInterface
     public function configureApplicationConfig(ApplicationConfigurator $applicationConfigurator) : void
     {
         $applicationConfigurator->addConfiguratorItem(ConsoleConfiguratorItem::class);
+
+        $applicationConfigurator->addBootstrapItem(DatabaseBootstrap::class);
     }
 
     /**
