@@ -11,6 +11,7 @@
     "require": {
         "php": "^7.1",
         "kiwi-suite/application": "dev-develop",
+        "kiwi-suite/database": "dev-develop",
         "kiwi-suite/config": "dev-develop",
         "symfony/console": "^4.0"
     },
