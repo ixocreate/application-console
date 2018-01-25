@@ -16,6 +16,7 @@ use KiwiSuite\Application\ApplicationInterface;
 use KiwiSuite\Application\Bootstrap;
 use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
 use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
+use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
 use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
 use KiwiSuite\Database\Bootstrap\DatabaseBootstrap;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
@@ -68,7 +69,7 @@ final class ConsoleApplication implements ApplicationInterface
         /** @var ServiceManagerConfigurator $serviceManagerConfigurator */
         $serviceManagerConfigurator = $configuratorRegistry->getConfigurator('serviceManagerConfigurator');
 
-        $serviceManagerConfigurator->addFactory(Application::class);
+        $serviceManagerConfigurator->addFactory(Application::class, ConsoleFactory::class);
         $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);
     }
 }

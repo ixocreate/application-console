@@ -32,10 +32,8 @@ final class ConsoleFactory implements FactoryInterface
         /** @var ConsoleSubManager $consoleSubManager */
         $consoleSubManager = $container->get(ConsoleSubManager::class);
 
-        $application =new Application("fruit");
-        foreach (\array_keys($consoleSubManager->getServiceManagerConfig()->getFactories()) as $service) {
-            $application->add($consoleSubManager->get($service));
-        }
+        $application = new Application('fruit', '0.1');
+        $application->setCommandLoader($consoleSubManager);
 
         return $application;
     }

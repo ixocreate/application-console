@@ -12,7 +12,15 @@ declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole;
 
 use KiwiSuite\ServiceManager\SubManager\SubManager;
+use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 
-final class ConsoleSubManager extends SubManager
+final class ConsoleSubManager extends SubManager implements CommandLoaderInterface
 {
+    /**
+     * @return array|string[]
+     */
+    public function getNames()
+    {
+        return \array_keys($this->getServiceManagerConfig()->getCommandMap());
+    }
 }
