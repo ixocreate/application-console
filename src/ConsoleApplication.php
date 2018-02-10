@@ -11,15 +11,8 @@
 declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole;
 
-use KiwiSuite\Application\ApplicationConfigurator;
 use KiwiSuite\Application\ApplicationInterface;
 use KiwiSuite\Application\Bootstrap;
-use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
-use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
-use KiwiSuite\Database\Bootstrap\DatabaseBootstrap;
-use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
 use Symfony\Component\Console\Application;
 
 final class ConsoleApplication implements ApplicationInterface
@@ -48,28 +41,5 @@ final class ConsoleApplication implements ApplicationInterface
         $bootstrap = new Bootstrap();
         $serviceManager = $bootstrap->bootstrap($this->bootstrapDirectory, $this);
         $serviceManager->get(Application::class)->run();
-    }
-
-    /**
-     * @param ApplicationConfigurator $applicationConfigurator
-     * @return mixed
-     */
-    public function configureApplicationConfig(ApplicationConfigurator $applicationConfigurator) : void
-    {
-        $applicationConfigurator->addConfiguratorItem(ConsoleConfiguratorItem::class);
-
-        $applicationConfigurator->addBootstrapItem(DatabaseBootstrap::class);
-    }
-
-    /**
-     * @param ConfiguratorRegistry $configuratorRegistry
-     */
-    public function configure(ConfiguratorRegistry $configuratorRegistry): void
-    {
-        /** @var ServiceManagerConfigurator $serviceManagerConfigurator */
-        $serviceManagerConfigurator = $configuratorRegistry->getConfigurator('serviceManagerConfigurator');
-
-        $serviceManagerConfigurator->addFactory(Application::class, ConsoleFactory::class);
-        $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);
     }
 }
