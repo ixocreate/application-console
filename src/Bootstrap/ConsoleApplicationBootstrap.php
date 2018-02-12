@@ -6,12 +6,13 @@ use KiwiSuite\Application\Bootstrap\BootstrapInterface;
 use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
 use KiwiSuite\Application\Service\ServiceRegistry;
 use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
+use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
+use KiwiSuite\ApplicationConsole\Console\Factory\ConsoleRunnerFactory;
 use KiwiSuite\ApplicationConsole\ConsoleSubManager;
 use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
 use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
 use KiwiSuite\ServiceManager\ServiceManager;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
-use Symfony\Component\Console\Application;
 
 final class ConsoleApplicationBootstrap implements BootstrapInterface
 {
@@ -24,7 +25,7 @@ final class ConsoleApplicationBootstrap implements BootstrapInterface
         /** @var ServiceManagerConfigurator $serviceManagerConfigurator */
         $serviceManagerConfigurator = $configuratorRegistry->getConfigurator('serviceManagerConfigurator');
 
-        $serviceManagerConfigurator->addFactory(Application::class, ConsoleFactory::class);
+        $serviceManagerConfigurator->addFactory(ConsoleRunner::class, ConsoleRunnerFactory::class);
         $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);
     }
 
