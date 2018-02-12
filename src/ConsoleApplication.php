@@ -11,9 +11,10 @@
 declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole;
 
+use KiwiSuite\Application\ApplicationConfigurator;
 use KiwiSuite\Application\ApplicationInterface;
 use KiwiSuite\Application\Bootstrap;
-use Symfony\Component\Console\Application;
+use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
 
 final class ConsoleApplication implements ApplicationInterface
 {
@@ -38,8 +39,21 @@ final class ConsoleApplication implements ApplicationInterface
      */
     public function run(): void
     {
-        $bootstrap = new Bootstrap();
-        $serviceManager = $bootstrap->bootstrap($this->bootstrapDirectory, $this);
-        $serviceManager->get(Application::class)->run();
+        $serviceManager = (new Bootstrap())->bootstrap($this->bootstrapDirectory, $this);
+        $serviceManager->get(ConsoleRunner::class)->run();
+    }
+
+    public function configure(ApplicationConfigurator $applicationConfigurator): void
+    {
+        if (!isset($_SERVER['argv']) || !\is_array($_SERVER['argv'])) {
+            return;
+        }
+
+        if (\array_search('-d', $_SERVER['argv'], true) !== false || \array_search('--development', $_SERVER['argv'], true) !== false) {
+            $applicationConfigurator->setDevelopment(true);
+            return;
+        }
+
+        //TODO make a proper short syntax check (for grouped input options)
     }
 }
