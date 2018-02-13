@@ -1,4 +1,13 @@
 <?php
+/**
+ * kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
+ *
+ * @package kiwi-suite/application-console
+ * @see https://github.com/kiwi-suite/application-console
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole\Bootstrap;
 
@@ -9,7 +18,6 @@ use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
 use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
 use KiwiSuite\ApplicationConsole\Console\Factory\ConsoleRunnerFactory;
 use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
 use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
 use KiwiSuite\ServiceManager\ServiceManager;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
@@ -42,7 +50,7 @@ final class ConsoleApplicationBootstrap implements BootstrapInterface
     public function getConfiguratorItems(): ?array
     {
         return [
-            ConsoleConfiguratorItem::class
+            ConsoleConfiguratorItem::class,
         ];
     }
 
@@ -59,6 +67,5 @@ final class ConsoleApplicationBootstrap implements BootstrapInterface
      */
     public function boot(ServiceManager $serviceManager): void
     {
-
     }
 }
