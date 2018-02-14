@@ -13,6 +13,7 @@ namespace KiwiSuite\ApplicationConsole\Bootstrap;
 
 use KiwiSuite\Application\Bootstrap\BootstrapInterface;
 use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
+use KiwiSuite\Application\ConfiguratorItem\ServiceManagerConfiguratorItem;
 use KiwiSuite\Application\Service\ServiceRegistry;
 use KiwiSuite\ApplicationConsole\ConfiguratorItem\ConsoleConfiguratorItem;
 use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
@@ -31,7 +32,7 @@ final class ConsoleApplicationBootstrap implements BootstrapInterface
     public function configure(ConfiguratorRegistry $configuratorRegistry): void
     {
         /** @var ServiceManagerConfigurator $serviceManagerConfigurator */
-        $serviceManagerConfigurator = $configuratorRegistry->getConfigurator('serviceManagerConfigurator');
+        $serviceManagerConfigurator = $configuratorRegistry->get(ServiceManagerConfiguratorItem::class);
 
         $serviceManagerConfigurator->addFactory(ConsoleRunner::class, ConsoleRunnerFactory::class);
         $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);

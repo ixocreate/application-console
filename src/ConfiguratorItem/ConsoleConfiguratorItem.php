@@ -15,6 +15,7 @@ use KiwiSuite\Application\ConfiguratorItem\ConfiguratorItemInterface;
 use KiwiSuite\Application\Exception\InvalidArgumentException;
 use KiwiSuite\ApplicationConsole\Command\CommandInterface;
 use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
+use KiwiSuite\ApplicationConsole\Factory\CommandInitializer;
 use KiwiSuite\ServiceManager\ServiceManagerConfig;
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
 
@@ -31,7 +32,7 @@ final class ConsoleConfiguratorItem implements ConfiguratorItemInterface
     /**
      * @return string
      */
-    public function getConfiguratorName(): string
+    public function getVariableName(): string
     {
         return 'consoleServiceManagerConfigurator';
     }
@@ -39,7 +40,7 @@ final class ConsoleConfiguratorItem implements ConfiguratorItemInterface
     /**
      * @return string
      */
-    public function getConfiguratorFileName(): string
+    public function getFileName(): string
     {
         return 'console.php';
     }
@@ -63,6 +64,10 @@ final class ConsoleConfiguratorItem implements ConfiguratorItemInterface
             $commandMap[$commandName] = $id;
         }
 
+        $initializers = [
+            CommandInitializer::class
+        ];
+
         return new ConsoleServiceManagerConfig(
             $commandMap,
             $config->getFactories(),
@@ -70,7 +75,7 @@ final class ConsoleConfiguratorItem implements ConfiguratorItemInterface
             $config->getDelegators(),
             $config->getLazyServices(),
             $config->getDisabledSharing(),
-            $config->getInitializers()
+            array_merge($config->getInitializers(), $initializers)
         );
     }
 }

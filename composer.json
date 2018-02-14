@@ -6,6 +6,9 @@
     "authors": [
         {
             "name": "Thomas Payer"
+        },
+        {
+            "name": "Bernhard Efler"
         }
     ],
     "require": {
