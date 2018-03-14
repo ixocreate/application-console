@@ -13,8 +13,8 @@ namespace KiwiSuite\ApplicationConsole\Console\Factory;
 
 use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
 use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\ServiceManager\FactoryInterface;
-use KiwiSuite\ServiceManager\ServiceManagerInterface;
+use KiwiSuite\Contract\ServiceManager\FactoryInterface;
+use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
 
 final class ConsoleRunnerFactory implements FactoryInterface
 {

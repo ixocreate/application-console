@@ -13,9 +13,9 @@ namespace KiwiSuite\ApplicationConsole\Factory;
 
 use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
 use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\ServiceManager\ServiceManagerInterface;
-use KiwiSuite\ServiceManager\SubManager\SubManagerFactoryInterface;
-use KiwiSuite\ServiceManager\SubManager\SubManagerInterface;
+use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
+use KiwiSuite\Contract\ServiceManager\SubManager\SubManagerFactoryInterface;
+use KiwiSuite\Contract\ServiceManager\SubManager\SubManagerInterface;
 use Symfony\Component\Console\Command\Command;
 
 final class ConsoleSubManagerFactory implements SubManagerFactoryInterface

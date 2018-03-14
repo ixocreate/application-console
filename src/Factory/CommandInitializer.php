@@ -2,8 +2,8 @@
 
 namespace KiwiSuite\ApplicationConsole\Factory;
 
-use KiwiSuite\ServiceManager\InitializerInterface;
-use KiwiSuite\ServiceManager\ServiceManagerInterface;
+use KiwiSuite\Contract\ServiceManager\InitializerInterface;
+use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 

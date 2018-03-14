@@ -14,6 +14,7 @@
     "require": {
         "php": "^7.1",
         "kiwi-suite/application": "dev-develop",
+        "kiwi-suite/contract": "dev-develop",
         "symfony/console": "^4.0"
     },
     "require-dev": {

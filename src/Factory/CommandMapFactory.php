@@ -13,9 +13,9 @@ namespace KiwiSuite\ApplicationConsole\Factory;
 
 use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
 use KiwiSuite\ApplicationConsole\ConsoleSubManager;
+use KiwiSuite\Contract\ServiceManager\FactoryInterface;
+use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
 use KiwiSuite\ServiceManager\Exception\ServiceNotCreatedException;
-use KiwiSuite\ServiceManager\FactoryInterface;
-use KiwiSuite\ServiceManager\ServiceManagerInterface;
 
 class CommandMapFactory implements FactoryInterface
 {
