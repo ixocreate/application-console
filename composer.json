@@ -11,6 +11,8 @@
             "name": "Bernhard Efler"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^7.1",
         "kiwi-suite/application": "dev-develop",
