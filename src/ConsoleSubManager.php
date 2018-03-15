@@ -11,6 +11,7 @@
 declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole;
 
+use KiwiSuite\ApplicationConsole\Factory\CommandMapFactory;
 use KiwiSuite\ServiceManager\SubManager\SubManager;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 
@@ -19,8 +20,14 @@ final class ConsoleSubManager extends SubManager implements CommandLoaderInterfa
     /**
      * @return array|string[]
      */
-    public function getNames()
+    public function getNames(): array
     {
-        return \array_keys($this->getServiceManagerConfig()->getCommandMap());
+        $names = [];
+        foreach ($this->getServiceManagerConfig()->getFactories() as $name => $factory) {
+            if ($factory === CommandMapFactory::class) {
+                $names[] = $name;
+            }
+        }
+        return $names;
     }
 }

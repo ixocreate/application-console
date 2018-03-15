@@ -11,7 +11,7 @@
 declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole\Factory;
 
-use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
+use KiwiSuite\ApplicationConsole\CommandMapping;
 use KiwiSuite\ApplicationConsole\ConsoleSubManager;
 use KiwiSuite\Contract\ServiceManager\FactoryInterface;
 use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
@@ -21,8 +21,7 @@ class CommandMapFactory implements FactoryInterface
 {
     public function __invoke(ServiceManagerInterface $container, $requestedName, array $options = null)
     {
-        $config = $container->get(ConsoleServiceManagerConfig::class);
-        $commandMap = $config->getCommandMap();
+        $commandMap = $container->get(CommandMapping::class)->getMapping();
 
         if (!\array_key_exists($requestedName, $commandMap)) {
             throw new ServiceNotCreatedException(\sprintf('Unable to create command %s. Name not found in CommandMap', $requestedName));
