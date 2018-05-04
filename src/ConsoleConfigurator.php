@@ -11,11 +11,11 @@
 declare(strict_types=1);
 namespace KiwiSuite\ApplicationConsole;
 
-use KiwiSuite\ApplicationConsole\Command\CommandInterface;
 use KiwiSuite\ApplicationConsole\Factory\CommandInitializer;
 use KiwiSuite\ApplicationConsole\Factory\CommandMapFactory;
 use KiwiSuite\Contract\Application\ConfiguratorInterface;
 use KiwiSuite\Contract\Application\ServiceRegistryInterface;
+use KiwiSuite\Contract\Command\CommandInterface;
 use KiwiSuite\Entity\Exception\InvalidArgumentException;
 use KiwiSuite\ServiceManager\Factory\AutowireFactory;
 use KiwiSuite\ServiceManager\SubManager\SubManagerConfigurator;
