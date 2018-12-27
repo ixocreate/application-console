@@ -1,29 +1,21 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
- *
- * @package kiwi-suite/application-console
- * @see https://github.com/kiwi-suite/application-console
- * @copyright Copyright (c) 2010 - 2017 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole;
 
-use KiwiSuite\Application\ApplicationConfigurator;
-use KiwiSuite\Application\ApplicationInterface;
-use KiwiSuite\Application\Bootstrap;
-use KiwiSuite\ApplicationConsole\Bootstrap\ConsoleBootstrap;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
-use KiwiSuite\Config\Bootstrap\ConfigBootstrap;
-use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
-use Symfony\Component\Console\Application;
+namespace Ixocreate\ApplicationConsole;
+
+use Ixocreate\Application\ApplicationConfigurator;
+use Ixocreate\Application\ApplicationInterface;
+use Ixocreate\Application\Bootstrap;
+use Ixocreate\ApplicationConsole\Console\ConsoleRunner;
 
 final class ConsoleApplication implements ApplicationInterface
 {
-
     /**
      * @var string
      */
@@ -44,27 +36,21 @@ final class ConsoleApplication implements ApplicationInterface
      */
     public function run(): void
     {
-        $bootstrap = new Bootstrap();
-        $serviceManager = $bootstrap->bootstrap($this->bootstrapDirectory, $this);
-        $serviceManager->get(Application::class)->run();
+        $serviceManager = (new Bootstrap())->bootstrap($this->bootstrapDirectory, $this);
+        $serviceManager->get(ConsoleRunner::class)->run();
     }
 
-    /**
-     * @param ApplicationConfigurator $applicationConfigurator
-     * @return mixed
-     */
-    public function configureApplicationConfig(ApplicationConfigurator $applicationConfigurator)
+    public function configure(ApplicationConfigurator $applicationConfigurator): void
     {
-        $applicationConfigurator->addBootstrapItem(ConfigBootstrap::class, 50);
-        $applicationConfigurator->addBootstrapItem(ConsoleBootstrap::class, 100);
-    }
+        if (!isset($_SERVER['argv']) || !\is_array($_SERVER['argv'])) {
+            return;
+        }
 
-    /**
-     * @param ServiceManagerConfigurator $serviceManagerConfigurator
-     */
-    public function configureServiceManager(ServiceManagerConfigurator $serviceManagerConfigurator): void
-    {
-        $serviceManagerConfigurator->addSubManager(ConsoleSubManager::class, ConsoleSubManagerFactory::class);
-        $serviceManagerConfigurator->addFactory(Application::class, ConsoleFactory::class);
+        if (\array_search('-d', $_SERVER['argv'], true) !== false || \array_search('--development', $_SERVER['argv'], true) !== false) {
+            $applicationConfigurator->setDevelopment(true);
+            return;
+        }
+
+        //TODO make a proper short syntax check (for grouped input options)
     }
 }

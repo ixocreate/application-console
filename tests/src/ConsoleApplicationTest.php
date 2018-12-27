@@ -1,22 +1,20 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
- *
- * @package kiwi-suite/application-console
- * @see https://github.com/kiwi-suite/application-console
- * @copyright Copyright (c) 2010 - 2017 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 
 declare(strict_types=1);
-namespace KiwiSuiteTest\ApplicationConsole;
 
-use KiwiSuite\Application\ApplicationConfigurator;
-use KiwiSuite\ApplicationConsole\Bootstrap\ConsoleBootstrap;
-use KiwiSuite\ApplicationConsole\ConsoleApplication;
-use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\Config\Bootstrap\ConfigBootstrap;
-use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
+namespace IxocreateTest\ApplicationConsole;
+
+use Ixocreate\Application\ApplicationConfigurator;
+use Ixocreate\ApplicationConsole\Bootstrap\ConsoleBootstrap;
+use Ixocreate\ApplicationConsole\ConsoleApplication;
+use Ixocreate\ApplicationConsole\ConsoleSubManager;
+use Ixocreate\Config\Bootstrap\ConfigBootstrap;
+use Ixocreate\ServiceManager\ServiceManagerConfigurator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 

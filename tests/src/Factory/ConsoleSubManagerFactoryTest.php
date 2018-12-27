@@ -1,22 +1,20 @@
 <?php
 /**
- * kiwi-suite/application (https://github.com/kiwi-suite/application-console)
- *
- * @package kiwi-suite/application-console
- * @see https://github.com/kiwi-suite/application-console
- * @copyright Copyright (c) 2010 - 2017 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 
 declare(strict_types=1);
-namespace KiwiSuiteTest\ApplicationConsoleFactory;
 
-use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
-use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
-use KiwiSuite\ServiceManager\ServiceManager;
-use KiwiSuite\ServiceManager\ServiceManagerConfig;
-use KiwiSuite\ServiceManager\ServiceManagerSetup;
+namespace IxocreateTest\ApplicationConsoleFactory;
+
+use Ixocreate\ApplicationConsole\ConsoleServiceManagerConfig;
+use Ixocreate\ApplicationConsole\ConsoleSubManager;
+use Ixocreate\ApplicationConsole\Factory\ConsoleSubManagerFactory;
+use Ixocreate\ServiceManager\ServiceManager;
+use Ixocreate\ServiceManager\ServiceManagerConfig;
+use Ixocreate\ServiceManager\ServiceManagerSetup;
 use PHPUnit\Framework\TestCase;
 
 class ConsoleSubManagerFactoryTest extends TestCase
