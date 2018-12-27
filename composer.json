@@ -1,22 +1,19 @@
 {
-    "name": "kiwi-suite/application-console",
-    "description": "kiwi-suite/application-console",
+    "name": "ixocreate/application-console",
+    "description": "IXOCREATE application console integration",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Thomas Payer"
-        },
-        {
-            "name": "Bernhard Efler"
+            "name": "IXOCREATE"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "kiwi-suite/application": "dev-develop",
-        "kiwi-suite/contract": "dev-develop",
+        "ixocreate/application": "dev-develop",
+        "ixocreate/contract": "dev-develop",
         "symfony/console": "^4.0"
     },
     "require-dev": {
@@ -34,5 +31,8 @@
             "IxocreateMisc\\ApplicationConsole\\": "tests/misc/",
             "IxocreateTest\\ApplicationConsole\\": "tests/src/"
         }
+    },
+    "scripts": {
+        "fix-cs": "vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --config vendor/ixocreate/coding-standard/.php_cs"
     }
 }
