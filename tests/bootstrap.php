@@ -1,10 +1,7 @@
 <?php
 /**
- * kiwi-suite/application-console (https://github.com/kiwi-suite/application-console)
- *
- * @package kiwi-suite/application-console
- * @see https://github.com/kiwi-suite/application-console
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 
