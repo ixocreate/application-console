@@ -9,12 +9,12 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole\Console\Factory;
+namespace Ixocreate\ApplicationConsole\Console\Factory;
 
-use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
-use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\Contract\ServiceManager\FactoryInterface;
-use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ApplicationConsole\Console\ConsoleRunner;
+use Ixocreate\ApplicationConsole\ConsoleSubManager;
+use Ixocreate\Contract\ServiceManager\FactoryInterface;
+use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
 
 final class ConsoleRunnerFactory implements FactoryInterface
 {

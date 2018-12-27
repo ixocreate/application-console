@@ -9,7 +9,7 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole\Console;
+namespace Ixocreate\ApplicationConsole\Console;
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputOption;

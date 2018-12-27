@@ -9,14 +9,14 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuiteTest\ApplicationConsole;
+namespace IxocreateTest\ApplicationConsole;
 
-use KiwiSuite\Application\ApplicationConfigurator;
-use KiwiSuite\ApplicationConsole\Bootstrap\ConsoleBootstrap;
-use KiwiSuite\ApplicationConsole\ConsoleApplication;
-use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\Config\Bootstrap\ConfigBootstrap;
-use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
+use Ixocreate\Application\ApplicationConfigurator;
+use Ixocreate\ApplicationConsole\Bootstrap\ConsoleBootstrap;
+use Ixocreate\ApplicationConsole\ConsoleApplication;
+use Ixocreate\ApplicationConsole\ConsoleSubManager;
+use Ixocreate\Config\Bootstrap\ConfigBootstrap;
+use Ixocreate\ServiceManager\ServiceManagerConfigurator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 

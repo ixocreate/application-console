@@ -9,12 +9,12 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole;
+namespace Ixocreate\ApplicationConsole;
 
-use KiwiSuite\Application\ApplicationConfigurator;
-use KiwiSuite\Application\ApplicationInterface;
-use KiwiSuite\Application\Bootstrap;
-use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
+use Ixocreate\Application\ApplicationConfigurator;
+use Ixocreate\Application\ApplicationInterface;
+use Ixocreate\Application\Bootstrap;
+use Ixocreate\ApplicationConsole\Console\ConsoleRunner;
 
 final class ConsoleApplication implements ApplicationInterface
 {

@@ -9,10 +9,10 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole;
+namespace Ixocreate\ApplicationConsole;
 
-use KiwiSuite\ApplicationConsole\Factory\CommandMapFactory;
-use KiwiSuite\ServiceManager\SubManager\SubManager;
+use Ixocreate\ApplicationConsole\Factory\CommandMapFactory;
+use Ixocreate\ServiceManager\SubManager\SubManager;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 
 final class ConsoleSubManager extends SubManager implements CommandLoaderInterface

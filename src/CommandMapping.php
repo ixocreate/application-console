@@ -9,9 +9,9 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole;
+namespace Ixocreate\ApplicationConsole;
 
-use KiwiSuite\Contract\Application\SerializableServiceInterface;
+use Ixocreate\Contract\Application\SerializableServiceInterface;
 
 final class CommandMapping implements SerializableServiceInterface
 {

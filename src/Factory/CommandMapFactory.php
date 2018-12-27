@@ -9,13 +9,13 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole\Factory;
+namespace Ixocreate\ApplicationConsole\Factory;
 
-use KiwiSuite\ApplicationConsole\CommandMapping;
-use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\Contract\ServiceManager\FactoryInterface;
-use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
-use KiwiSuite\ServiceManager\Exception\ServiceNotCreatedException;
+use Ixocreate\ApplicationConsole\CommandMapping;
+use Ixocreate\ApplicationConsole\ConsoleSubManager;
+use Ixocreate\Contract\ServiceManager\FactoryInterface;
+use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ServiceManager\Exception\ServiceNotCreatedException;
 
 class CommandMapFactory implements FactoryInterface
 {

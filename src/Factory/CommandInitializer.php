@@ -9,11 +9,11 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ApplicationConsole\Factory;
+namespace Ixocreate\ApplicationConsole\Factory;
 
-use KiwiSuite\ApplicationConsole\Console\ConsoleRunner;
-use KiwiSuite\Contract\ServiceManager\InitializerInterface;
-use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ApplicationConsole\Console\ConsoleRunner;
+use Ixocreate\Contract\ServiceManager\InitializerInterface;
+use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
 use Symfony\Component\Console\Command\Command;
 
 class CommandInitializer implements InitializerInterface

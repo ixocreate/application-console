@@ -9,16 +9,16 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuiteTest\ApplicationConsoleFactory;
+namespace IxocreateTest\ApplicationConsoleFactory;
 
-use KiwiSuite\ApplicationConsole\ConsoleServiceManagerConfig;
-use KiwiSuite\ApplicationConsole\ConsoleSubManager;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleFactory;
-use KiwiSuite\ApplicationConsole\Factory\ConsoleSubManagerFactory;
-use KiwiSuite\ServiceManager\Factory\AutowireFactory;
-use KiwiSuite\ServiceManager\ServiceManager;
-use KiwiSuite\ServiceManager\ServiceManagerConfig;
-use KiwiSuite\ServiceManager\ServiceManagerSetup;
+use Ixocreate\ApplicationConsole\ConsoleServiceManagerConfig;
+use Ixocreate\ApplicationConsole\ConsoleSubManager;
+use Ixocreate\ApplicationConsole\Factory\ConsoleFactory;
+use Ixocreate\ApplicationConsole\Factory\ConsoleSubManagerFactory;
+use Ixocreate\ServiceManager\Factory\AutowireFactory;
+use Ixocreate\ServiceManager\ServiceManager;
+use Ixocreate\ServiceManager\ServiceManagerConfig;
+use Ixocreate\ServiceManager\ServiceManagerSetup;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\HelpCommand;
