@@ -29,7 +29,7 @@ final class ConsoleRunnerFactory implements FactoryInterface
         /** @var ConsoleSubManager $consoleSubManager */
         $consoleSubManager = $container->get(ConsoleSubManager::class);
 
-        $application = new ConsoleRunner('fruit', '0.1');
+        $application = new ConsoleRunner('ixocreate', '0.1');
         $application->setCommandLoader($consoleSubManager);
 
         return $application;
